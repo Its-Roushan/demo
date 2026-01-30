@@ -1,0 +1,27 @@
+pipeline {
+    agent any 
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building the application...' // Echo is a built-in Pipeline step
+                // Add your build commands here, e.g.,
+                // sh 'mvn clean install'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing the application...'
+                // Add your test commands here, e.g.,
+                // sh './run-tests.sh'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying the application...'
+                // Add your deployment commands here, e.g.,
+                // sh 'ansible-playbook deploy.yml'
+            }
+        }
+    }
+}
